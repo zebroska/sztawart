@@ -1,3 +1,7 @@
+:root {
+    --color : #24BAA0;  /* ZMIENNA*/
+}
+
 * {
     box-sizing: border-box;
 }
@@ -9,4 +13,95 @@
 
 body {
     font-family: 'Raleway', sans-serif;
+}
+/** NAGLOWEK STRONY */
+
+.page-header {
+    height: 40px;
+    background: #000;
+}
+
+.page-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;    /*rodzica czyli page-header*/
+}
+
+.page-logo {
+    margin: 0;
+    display: flex;
+    align-items: center;    /* wysrodkowuje logo */
+}
+
+.page-logo-link {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.page-logo span {
+    color: var(--color);
+}
+
+.page-nav {
+
+}
+
+.page-nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.page-nav-list li {
+    position: relative;     /* bo jest rodzicem */
+}
+
+.page-nav-list a {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 28px;
+    display: block;
+}
+
+.page-nav-list a:hover {
+    color: var(--color);
+}
+
+.page-nav-sublist {
+    background: black;
+    list-style: none;
+    margin: 0;
+    position: absolute;     /* bo nie jest rodzicem */
+    top: 50px;
+    left: 50%;   /*wzgledem rodzica */
+    transform: translate(-50%, 0);
+    padding: 10px 0px;      /* gora dol */
+}
+
+.page-nav-sublist:before {  /* dziubek do menu*/
+    content: '';    /* SPRAWDZ */
+    display: block;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom-color: black;
+    position: absolute;
+    top: -20px; /*wyliczam z borderu*/
+    left: 50%;
+    transform: translate(-50%, 0);
+
+}
+
+.page-nav-sublist li {}
+
+.page-nav-sublist a {
+    font-weight: normal;
+    text-transform: none;
+    padding: 5px 20px;
 }
